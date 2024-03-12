@@ -1,6 +1,6 @@
 import React from 'react'
 import { ImageSourcePropType, SafeAreaView ,Text,View,Image} from 'react-native'
-import {styles} from './Heading-styles'
+import {styles} from './heading-styles'
 
 interface IHeadingProps {
     heading: string;

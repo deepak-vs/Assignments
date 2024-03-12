@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, View} from 'react-native';
 
-import {styles} from './CardButton-style';
+import {styles} from './cardbutton-style';
 
 interface IButtonProps {
   text: string;

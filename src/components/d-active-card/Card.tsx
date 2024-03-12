@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, ImageBackground, ImageSourcePropType} from 'react-native';
 
 import CardButton from '../buttons/CardButton';
-import {styles} from './Card-styles';
+import {styles} from './card-styles';
 
 interface ICardProps {
   title: string;

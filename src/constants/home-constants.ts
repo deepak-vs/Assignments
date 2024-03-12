@@ -1,8 +1,8 @@
-import OuterRing from '../assets/Images/outer-ring.png';
-import Focus from '../assets/Images/focus.png';
-import Scan from '../assets/Images/scan.png';
-import Square from '../assets/Images/square.png';
-import Follow from '../assets/Images/follow.png';
+import OuterRing from '../assets/images/outer-ring.png';
+import Focus from '../assets/images/focus.png';
+import Scan from '../assets/images/scan.png';
+import Square from '../assets/images/square.png';
+import Follow from '../assets/images/follow.png';
 
 
 export const CARD_DATA = [
