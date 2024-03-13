@@ -1,22 +1,21 @@
-import React from 'react';
-import {View, Text, ImageBackground, ImageSourcePropType} from 'react-native';
-
-import CardButton from '../buttons/CardButton';
-import {styles} from './card-styles';
+import React from 'react'
+import { View, Text, ImageBackground, ImageSourcePropType } from 'react-native'
+import CardButton from '../buttons/CardButton'
+import { styles } from './card-styles'
 
 interface ICardProps {
-  title: string;
-  titleColor: string;
-  background: ImageSourcePropType;
+  title: string
+  titleColor: string
+  background: ImageSourcePropType
 }
 
-const Card: React.FC<ICardProps> = ({title, titleColor, background}):React.JSX.Element => {
+const Card: React.FunctionComponent<ICardProps> = ({ title, titleColor, background }): React.JSX.Element => {
   return (
     <View style={styles.container}>
       <ImageBackground source={background} style={styles.card}>
         <View style={styles.subContainer}>
           <View style={styles.cardTitle}>
-            <Text style={[styles.text, {color: titleColor}]}>{title}</Text>
+            <Text style={[styles.text, { color: titleColor }]}>{title}</Text>
           </View>
 
           <View style={styles.buttons}>
@@ -27,7 +26,7 @@ const Card: React.FC<ICardProps> = ({title, titleColor, background}):React.JSX.E
         </View>
       </ImageBackground>
     </View>
-  );
-};
+  )
+}
 
-export default Card;
+export default Card

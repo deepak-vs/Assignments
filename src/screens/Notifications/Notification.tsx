@@ -1,97 +1,52 @@
-import React, {useEffect, useState} from 'react';
-import {View, Text, Image, FlatList} from 'react-native';
+import React, { useEffect, useState } from 'react'
+import { View, FlatList } from 'react-native'
+import EmptyNotification from '../../components/empty-notification/EmptyNotification'
+import NotificationCard from '../../components/notification-card/NotificationCard'
+import { getTime } from '../../utils/common-utils'
+import { URL } from '../../constants/api-constants'
+import { styles } from './notification-styles'
 
-import bell from '../../assets/icons/bell.png';
-import NotificationCard from '../../components/notification-card/NotificationCard';
-import {URL} from '../../constants/api-constants';
-import {styles} from './notification-styles';
-
-type ImageIconKey = 1 | 2 | 3;
+type ImageIconKey = 1 | 2 | 3
 
 interface NotificationItem {
-  id: string;
-  icon: ImageIconKey;
-  reminder: string;
-  task: string;
-  time: string;
+  id: string
+  icon: ImageIconKey
+  reminder: string
+  task: string
+  time: string
 }
 
-type NotificationCount = number;
+type NotificationCount = number
 
-const startTimestamp = new Date('2024-03-01').getTime();
-const endTimestamp = new Date().getTime();
+const Notification = (): React.JSX.Element => {
+  const [notificationCount, setNotificationCount] = useState<NotificationCount>(1)
 
-const generateRandomTimestamp = (
-  startTimestamp: number,
-  endTimestamp: number,
-): Date => {
-  const randomTimestamp =
-    startTimestamp + Math.random() * (endTimestamp - startTimestamp);
-  return new Date(randomTimestamp);
-};
-
-const getTime = () => {
-  const randomTimestamp: any = generateRandomTimestamp(
-    startTimestamp,
-    endTimestamp,
-  );
-  const now: any = new Date();
-  const diffInMilliseconds = now - randomTimestamp;
-  const minutes = Math.floor(diffInMilliseconds / (60 * 1000));
-  const hours = Math.floor(diffInMilliseconds / (60 * 60 * 1000));
-  const days = Math.floor(diffInMilliseconds / (24 * 60 * 60 * 1000));
-  if (minutes < 60) {
-    return `${minutes} min ago`;
-  }
-  if (hours < 24) {
-    return `${hours} hours ago`;
-  }
-  if (days < 7) {
-    return `${days} days ago`;
-  } else {
-    return `${days % 7} weeks ago`;
-  }
-};
-
-const EmptyNotification = ():React.JSX.Element => {
-  return (
-    <View style={styles.containerBox}>
-      <View>
-        <Image source={bell} />
-      </View>
-      <View style={styles.titleBox}>
-        <Text style={styles.title}>No notifications yet!</Text>
-        <View>
-          <Text style={styles.message}>
-            You have no notifications right now.
-          </Text>
-          <Text style={styles.message}>Come back later.</Text>
-        </View>
-      </View>
-    </View>
-  );
-};
-
-const Notification=(): React.JSX.Element =>{
-  const [notificationCount, setNotificationCount] =useState<NotificationCount>(1);
-
-  const [data, setData] = useState<NotificationItem[]>([]);
+  const [data, setData] = useState<NotificationItem[]>([])
 
   const getData = async () => {
-    const response = await fetch(`${URL}/getallreminders`);
-    const data = await response.json();
-    setData(data);
-  };
+    try {
+      const response = await fetch(`${URL}/getallreminders`)
+      console.log(response.ok)
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`)
+      }
+
+      const data = await response.json()
+      setData(data)
+    } catch (error: any) {
+      console.error('An error occurred while fetching data:', error.message)
+    }
+  }
 
   useEffect(() => {
-    getData();
-  }, []);
+    getData()
+  }, [])
 
   return (
     <View style={styles.container}>
       <FlatList
         data={notificationCount ? data : []}
-        renderItem={({item}) => (
+        renderItem={({ item }) => (
           <NotificationCard
             iconNum={item.icon}
             reminder={item.reminder}
@@ -103,7 +58,7 @@ const Notification=(): React.JSX.Element =>{
         ListEmptyComponent={<EmptyNotification />}
       />
     </View>
-  );
+  )
 }
 
-export default Notification;
+export default Notification

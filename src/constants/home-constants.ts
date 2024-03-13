@@ -1,9 +1,8 @@
-import OuterRing from '../assets/images/outer-ring.png';
-import Focus from '../assets/images/focus.png';
-import Scan from '../assets/images/scan.png';
-import Square from '../assets/images/square.png';
-import Follow from '../assets/images/follow.png';
-
+import OuterRing from '../assets/images/outer-ring.png'
+import Focus from '../assets/images/focus.png'
+import Scan from '../assets/images/scan.png'
+import Square from '../assets/images/square.png'
+import Follow from '../assets/images/follow.png'
 
 export const CARD_DATA = [
     {title: 'Outer Ring', titleColor: '#D72B6A', background: OuterRing},

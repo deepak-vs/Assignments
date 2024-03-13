@@ -1,18 +1,17 @@
-import React from 'react';
-import {Text, View} from 'react-native';
-
-import {styles} from './cardbutton-style';
+import React from 'react'
+import { Text, TouchableOpacity } from 'react-native'
+import { styles } from './card-button-style'
 
 interface IButtonProps {
-  text: string;
+  text: string
 }
 
-const CardButton: React.FC<IButtonProps> = ({text}):React.JSX.Element => {
+const CardButton: React.FunctionComponent<IButtonProps> = ({ text }): React.JSX.Element => {
   return (
-    <View style={styles.button}>
+    <TouchableOpacity style={styles.button}>
       <Text style={styles.buttonText}>{text}</Text>
-    </View>
-  );
-};
+    </TouchableOpacity>
+  )
+}
 
-export default CardButton;
+export default CardButton

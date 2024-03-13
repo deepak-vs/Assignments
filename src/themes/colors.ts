@@ -1,9 +1,11 @@
+import { Neutral} from "./palletes";
 
-export const COLORS = {
-    heading:"#292F36",
-    background:'#ffffff',
-    text: '#2c3e50',
-    neutral600:"#4E5E6C",
-    dark:'#000000',
-};
+export enum Colors {
+  heading = Neutral.Shade700,
+  grey = Neutral.Shade600,
+  dark = Neutral.Shade700,
+  light=Neutral.Shade0,
+  lightGrey=Neutral.Shade100
+}
+
   

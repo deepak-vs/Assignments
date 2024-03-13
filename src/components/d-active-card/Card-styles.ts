@@ -1,4 +1,5 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native'
+import { Colors } from '../../themes'
 
 export const styles = StyleSheet.create({
   container: {
@@ -25,7 +26,7 @@ export const styles = StyleSheet.create({
   text: {
     fontFamily: 'Fraunces',
     elevation: 6,
-    shadowColor: 'white',
+    shadowColor: Colors.light,
     fontSize: 18,
     lineHeight: 25.2,
   },
@@ -35,5 +36,5 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 8,
     paddingVertical: 16,
     gap: 12,
-  }
-});
+  },
+})
