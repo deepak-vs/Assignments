@@ -3,7 +3,7 @@ import { Text, View, Image, ImageSourcePropType } from 'react-native'
 import speaker from '../../assets/icons/speaker.png'
 import clock from '../../assets/icons/clock.png'
 import lotus from '../../assets/icons/lotus.png'
-import { styles } from './notification-card-styles'
+import { styles } from './asNotificationCard-styles'
 
 interface INotificationProps {
   iconNum: ImageIconKey

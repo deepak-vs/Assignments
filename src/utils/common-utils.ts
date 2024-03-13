@@ -24,3 +24,4 @@ export const getTime = () => {
     return `${days % 7} weeks ago`
   }
 }
+

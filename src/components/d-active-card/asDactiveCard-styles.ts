@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native'
 import { Colors } from '../../themes'
+import { StyleSheet } from 'react-native'
 
 export const styles = StyleSheet.create({
   container: {
@@ -9,19 +9,19 @@ export const styles = StyleSheet.create({
   },
   subContainer: {
     flex: 1,
+    gap: 48,
     justifyContent: 'space-between',
   },
   card: {
     borderRadius: 16,
-    height: 160,
     justifyContent: 'space-between',
   },
   cardTitle: {
     paddingHorizontal: 8,
     paddingVertical: 8,
-    gap: 12,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: Colors.blur,
   },
   text: {
     fontFamily: 'Fraunces',

@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native'
 import { Colors } from '../../themes'
+import { StyleSheet } from 'react-native'
 
 export const styles = StyleSheet.create({
   containerBox: {
@@ -17,8 +17,7 @@ export const styles = StyleSheet.create({
     color: Colors.dark,
   },
   message: {
-    fontFamily: 'Quicksand',
-    fontWeight: '500',
+    fontFamily: 'Quicksand-light',
     fontSize: 16,
     lineHeight: 24,
     alignSelf: 'center',

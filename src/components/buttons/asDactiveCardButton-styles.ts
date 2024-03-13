@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native'
 import { Colors } from '../../themes'
+import { StyleSheet } from 'react-native'
 
 export const styles = StyleSheet.create({
   button: {
@@ -14,6 +14,7 @@ export const styles = StyleSheet.create({
     shadowColor: Colors.light,
   },
   buttonText: {
+    fontFamily: 'Quicksand-SemiBold',
     fontSize: 14,
     letterSpacing: 2,
     color: Colors.dark,

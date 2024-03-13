@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
     marginBottom: 120,
     justifyContent: 'space-evenly',
   },
-  subContainer:{
-    marginBottom:100,
-  }
+  subContainer: {
+    marginBottom: 100,
+  },
 })

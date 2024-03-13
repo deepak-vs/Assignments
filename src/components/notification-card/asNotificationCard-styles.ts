@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native'
 import { Colors } from '../../themes'
+import { StyleSheet } from 'react-native'
 
 export const styles = StyleSheet.create({
   card: {
@@ -16,8 +16,7 @@ export const styles = StyleSheet.create({
     gap: 20,
   },
   text: {
-    fontFamily: 'Quicksand',
-    fontWeight: '600',
+    fontFamily: 'Quicksand-Bold',
     fontSize: 14,
     lineHeight: 16.8,
     color: Colors.dark,
@@ -29,7 +28,7 @@ export const styles = StyleSheet.create({
   },
   time: {
     width: 183,
-    fontFamily: 'Quicksand',
+    fontFamily: 'Quicksand-SemiBold',
     fontWeight: '500',
     fontSize: 12,
     lineHeight: 18,

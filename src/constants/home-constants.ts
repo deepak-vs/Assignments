@@ -10,4 +10,4 @@ export const CARD_DATA = [
     {title: 'Scan', titleColor: '#B96204', background: Scan},
     {title: 'Square', titleColor: '#176E6D', background: Square},
     {title: 'Follow', titleColor: '#292F36', background: Follow},
-  ];
+  ]

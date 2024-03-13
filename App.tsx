@@ -9,7 +9,7 @@ import React, { useState } from 'react'
 import { View } from 'react-native'
 import { SafeAreaView, StatusBar } from 'react-native'
 import Home from './src/screens/Home/Home'
-import Heading from './src/components/headings/Heading'
+import ASHeading from './src/components/headings/ASHeading'
 import setting from './src/assets/icons/settings.png'
 import Notification from './src/screens/Notifications/Notification'
 import { Colors } from './src/themes'
@@ -22,12 +22,12 @@ function App(): React.JSX.Element {
       <StatusBar animated={true} backgroundColor={Colors.light} barStyle={'dark-content'} />
       {settingIcon ? (
         <View>
-          <Heading heading="Notification" icon={settingIcon} />
+          <ASHeading heading="Notification" icon={settingIcon} />
           <Notification />
         </View>
       ) : (
         <View>
-          <Heading heading="D-active" icon={settingIcon} />
+          <ASHeading heading="D-active" icon={settingIcon} />
           <Home />
         </View>
       )}

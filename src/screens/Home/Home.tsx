@@ -1,8 +1,8 @@
 import React from 'react'
 import { View, FlatList } from 'react-native'
-import Card from '../../components/d-active-card/Card'
+import ASDactiveCard from '../../components/d-active-card/ASDactiveCard'
 import { CARD_DATA } from '../../constants/home-constants'
-import { styles } from './home-style'
+import { styles } from './home-styles'
 
 const CardContainer = (): React.JSX.Element => {
   return (
@@ -10,9 +10,14 @@ const CardContainer = (): React.JSX.Element => {
       <FlatList
         data={CARD_DATA}
         renderItem={({ item }) => (
-          <Card title={item.title} titleColor={item.titleColor} background={item.background} />
+          <ASDactiveCard
+            title={item.title}
+            titleColor={item.titleColor}
+            background={item.background}
+          />
         )}
         keyExtractor={(item, index) => index.toString()}
+        showsVerticalScrollIndicator={false}
       />
     </View>
   )

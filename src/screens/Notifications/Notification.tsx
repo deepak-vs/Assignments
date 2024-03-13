@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { View, FlatList } from 'react-native'
-import EmptyNotification from '../../components/empty-notification/EmptyNotification'
-import NotificationCard from '../../components/notification-card/NotificationCard'
+import ASEmptyNotification from '../../components/empty-notification/ASEmptyNotification'
+import ASNotificationCard from '../../components/notification-card/ASNotificationCard'
 import { getTime } from '../../utils/common-utils'
 import { URL } from '../../constants/api-constants'
 import { styles } from './notification-styles'
@@ -25,6 +25,7 @@ const Notification = (): React.JSX.Element => {
 
   const getData = async () => {
     try {
+      console.log(URL)
       const response = await fetch(`${URL}/getallreminders`)
       console.log(response.ok)
       if (!response.ok) {
@@ -47,7 +48,7 @@ const Notification = (): React.JSX.Element => {
       <FlatList
         data={notificationCount ? data : []}
         renderItem={({ item }) => (
-          <NotificationCard
+          <ASNotificationCard
             iconNum={item.icon}
             reminder={item.reminder}
             task={item.task}
@@ -55,7 +56,8 @@ const Notification = (): React.JSX.Element => {
           />
         )}
         keyExtractor={item => item.id.toString()}
-        ListEmptyComponent={<EmptyNotification />}
+        ListEmptyComponent={<ASEmptyNotification />}
+        showsVerticalScrollIndicator={false}
       />
     </View>
   )

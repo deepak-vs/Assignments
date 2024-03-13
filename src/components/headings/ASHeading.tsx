@@ -1,6 +1,6 @@
 import React from 'react'
 import { ImageSourcePropType, SafeAreaView, Text, View, Image } from 'react-native'
-import { styles } from './heading-styles'
+import { styles } from './asHeading-styles'
 
 interface IHeadingProps {
   heading: string
@@ -11,7 +11,7 @@ const Heading: React.FunctionComponent<IHeadingProps> = ({ icon, heading }): Rea
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.subContainer}>
-        <Text/>
+        <Text />
         <View style={styles.heading}>
           <Text style={styles.text}>{heading}</Text>
         </View>
