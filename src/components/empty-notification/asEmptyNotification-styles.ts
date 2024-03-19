@@ -17,10 +17,10 @@ export const styles = StyleSheet.create({
     color: Colors.dark,
   },
   message: {
+    color: Colors.dark,
     fontFamily: 'Quicksand-light',
     fontSize: 16,
     lineHeight: 24,
-    alignSelf: 'center',
-    color: Colors.dark,
+    textAlign:'center',
   },
 })

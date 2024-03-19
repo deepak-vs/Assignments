@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import { View, FlatList } from 'react-native'
+import { FlatList, View } from 'react-native'
+
 import ASEmptyNotification from '../../components/empty-notification/ASEmptyNotification'
 import ASNotificationCard from '../../components/notification-card/ASNotificationCard'
+import ASHeading from '../../components/headings/ASHeading'
+import setting from '../../assets/icons/settings.png'
 import { getTime } from '../../utils/common-utils'
+
 import { URL } from '../../constants/api-constants'
+
 import { styles } from './notification-styles'
 
 type ImageIconKey = 1 | 2 | 3
@@ -16,10 +21,11 @@ interface NotificationItem {
   time: string
 }
 
+
 type NotificationCount = number
 
-const Notification = (): React.JSX.Element => {
-  const [notificationCount, setNotificationCount] = useState<NotificationCount>(1)
+const Notification = ()=> {
+  const [notificationCount, setNotificationCount] = useState<NotificationCount>()
 
   const [data, setData] = useState<NotificationItem[]>([])
 
@@ -44,22 +50,25 @@ const Notification = (): React.JSX.Element => {
   }, [])
 
   return (
-    <View style={styles.container}>
-      <FlatList
-        data={notificationCount ? data : []}
-        renderItem={({ item }) => (
-          <ASNotificationCard
-            iconNum={item.icon}
-            reminder={item.reminder}
-            task={item.task}
-            time={getTime()}
+   <View>
+       <ASHeading heading="Notification" icon={setting} />
+        <View style={styles.container}>
+          <FlatList
+            data={notificationCount ? data : []}
+            renderItem={({ item }) => (
+              <ASNotificationCard
+                iconNum={item.icon}
+                reminder={item.reminder}
+                task={item.task}
+                time={getTime()}
+              />
+            )}
+            keyExtractor={item => item.id.toString()}
+            ListEmptyComponent={<ASEmptyNotification />}
+            showsVerticalScrollIndicator={false}
           />
-        )}
-        keyExtractor={item => item.id.toString()}
-        ListEmptyComponent={<ASEmptyNotification />}
-        showsVerticalScrollIndicator={false}
-      />
-    </View>
+        </View>
+   </View>
   )
 }
 

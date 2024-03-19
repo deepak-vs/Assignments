@@ -1,5 +1,5 @@
-import { Colors } from '../../themes'
 import { StyleSheet } from 'react-native'
+import { Colors } from '../../themes'
 
 export const styles = StyleSheet.create({
   card: {
@@ -35,4 +35,8 @@ export const styles = StyleSheet.create({
     letterSpacing: 2,
     color: Colors.grey,
   },
+  image:{
+    width:48,
+    height:48
+  }
 })

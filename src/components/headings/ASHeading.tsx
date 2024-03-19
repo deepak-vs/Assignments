@@ -1,5 +1,6 @@
 import React from 'react'
-import { ImageSourcePropType, SafeAreaView, Text, View, Image } from 'react-native'
+import { Image, ImageSourcePropType, SafeAreaView, Text, View } from 'react-native'
+
 import { styles } from './asHeading-styles'
 
 interface IHeadingProps {
@@ -7,7 +8,7 @@ interface IHeadingProps {
   icon: ImageSourcePropType | undefined
 }
 
-const Heading: React.FunctionComponent<IHeadingProps> = ({ icon, heading }): React.JSX.Element => {
+const Heading = ({ icon, heading }:IHeadingProps) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.subContainer}>

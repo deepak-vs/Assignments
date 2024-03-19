@@ -1,6 +1,8 @@
 import React from 'react'
-import { View, Text, ImageBackground, ImageSourcePropType } from 'react-native'
+import { ImageBackground, ImageSourcePropType, Text, View } from 'react-native'
+
 import ASDactiveCardButton from '../buttons/ASDactiveCardButton'
+
 import { styles } from './asDactiveCard-styles'
 
 interface ICardProps {
@@ -9,11 +11,11 @@ interface ICardProps {
   background: ImageSourcePropType
 }
 
-const Card: React.FunctionComponent<ICardProps> = ({
+const ASDactiveCard = ({
   title,
   titleColor,
   background,
-}): React.JSX.Element => {
+}:ICardProps)=> {
   return (
     <View style={styles.container}>
       <ImageBackground source={background} style={styles.card} resizeMode="cover">
@@ -32,4 +34,4 @@ const Card: React.FunctionComponent<ICardProps> = ({
   )
 }
 
-export default Card
+export default ASDactiveCard

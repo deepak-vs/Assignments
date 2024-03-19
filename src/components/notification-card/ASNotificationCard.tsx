@@ -1,8 +1,10 @@
 import React from 'react'
-import { Text, View, Image, ImageSourcePropType } from 'react-native'
-import speaker from '../../assets/icons/speaker.png'
+import { Image, ImageSourcePropType, Text, View } from 'react-native'
+
 import clock from '../../assets/icons/clock.png'
 import lotus from '../../assets/icons/lotus.png'
+import speaker from '../../assets/icons/speaker.png'
+
 import { styles } from './asNotificationCard-styles'
 
 interface INotificationProps {
@@ -17,12 +19,12 @@ type ImageIcon<T extends ImageIconKey> = {
   [key in T]: ImageSourcePropType
 }
 
-const NotificationCard: React.FunctionComponent<INotificationProps> = ({
+const NotificationCard = ({
   iconNum,
   reminder,
   task,
   time,
-}): React.JSX.Element => {
+}:INotificationProps) => {
   const imageIcon: ImageIcon<ImageIconKey> = {
     1: speaker,
     2: clock,
@@ -32,7 +34,7 @@ const NotificationCard: React.FunctionComponent<INotificationProps> = ({
   return (
     <View style={styles.card}>
       <View style={styles.title}>
-        <Image source={imageIcon[iconNum]} />
+        <Image source={imageIcon[iconNum]} style={styles.image} resizeMode='contain' />
         <View>
           <Text style={styles.text}>{reminder}</Text>
           <Text style={styles.text}>{task}</Text>

@@ -6,11 +6,13 @@ export const styles = StyleSheet.create({
     borderRadius: 16,
     overflow: 'hidden',
     marginVertical: 10,
+    borderWidth:1,
   },
   subContainer: {
     flex: 1,
     gap: 48,
     justifyContent: 'space-between',
+    // borderWidth:1
   },
   card: {
     borderRadius: 16,

@@ -1,10 +1,14 @@
 import React from 'react'
-import { View, FlatList } from 'react-native'
+import { FlatList, View } from 'react-native'
+
 import ASDactiveCard from '../../components/d-active-card/ASDactiveCard'
+import ASHeading from '../../components/headings/ASHeading'
+
 import { CARD_DATA } from '../../constants/home-constants'
+
 import { styles } from './home-styles'
 
-const CardContainer = (): React.JSX.Element => {
+const CardContainer = ()=> {
   return (
     <View style={styles.container}>
       <FlatList
@@ -23,9 +27,10 @@ const CardContainer = (): React.JSX.Element => {
   )
 }
 
-const Home = (): React.JSX.Element => {
+const Home = () => {
   return (
     <View style={styles.subContainer}>
+      <ASHeading heading="D-active" icon={undefined} />
       <CardContainer />
     </View>
   )

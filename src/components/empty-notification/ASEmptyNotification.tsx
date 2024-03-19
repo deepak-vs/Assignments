@@ -1,20 +1,19 @@
 import React from 'react'
-import { View, Text, Image } from 'react-native'
+import { Image, Text, View } from 'react-native'
+
 import bell from '../../assets/icons/bell.png'
+
 import { styles } from './asEmptyNotification-styles'
 
-const EmptyNotification = (): React.JSX.Element => {
+const EmptyNotification = () => {
   return (
     <View style={styles.containerBox}>
-      <View>
-        <Image source={bell} />
-      </View>
+      <Image source={bell} />
       <View>
         <Text style={styles.title}>No notifications yet!</Text>
-        <View>
-          <Text style={styles.message}>You have no notifications right now.</Text>
-          <Text style={styles.message}>Come back later.</Text>
-        </View>
+        <Text style={styles.message}>
+          You have no notifications right now.{'\n'}Come back later.
+        </Text>
       </View>
     </View>
   )
