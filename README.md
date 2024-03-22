@@ -1,8 +1,3 @@
-<img width="321" alt="Screenshot 2024-03-11 at 4 58 54 PM" src="https://github.com/deepak-vs/Assignments/assets/157370904/7ffae2fc-0bfa-406e-86c1-9e8ceefc7643">
-<img width="321" alt="Screenshot 2024-03-11 at 4 56 57 PM" src="https://github.com/deepak-vs/Assignments/assets/157370904/76f9fda2-5582-4be8-a06d-45a23228b418">
-<img width="321" alt="Screenshot 2024-03-11 at 4 56 14 PM" src="https://github.com/deepak-vs/Assignments/assets/157370904/1383ab2f-5658-44e2-bae3-011398c8fa5f">
-
-
 
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
