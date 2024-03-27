@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "623351954228",
+    "project_id": "covistats-98d3c",
+    "storage_bucket": "covistats-98d3c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:623351954228:android:03e039bacc860ad2d5c361",
+        "android_client_info": {
+          "package_name": "com.covistat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "623351954228-ct8nvibps90i0a29op8vm6ol9n5h1fso.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.covistat",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "623351954228-0757fjh28jpbf3qc1ofqk4rkv2cs58fg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArX2Kc_9PtkMrXD1qAOxE6kXtGA8mny4Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "623351954228-0757fjh28jpbf3qc1ofqk4rkv2cs58fg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

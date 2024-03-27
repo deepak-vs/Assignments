@@ -1,4 +1,4 @@
-package com.notification
+package com.covistat
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate

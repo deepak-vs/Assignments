@@ -1,4 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import { GoogleSignin, statusCodes } from '@react-native-google-signin/google-signin';
+
 
 import React, { useEffect, useState } from 'react'
 import { Button, ScrollView, Text, TextInput, View } from 'react-native'
@@ -32,14 +34,35 @@ const SignIn = ({ navigation }: ISignInProps) => {
     }
     setFormErrors(errors)
   }
-  const goToFirebase = () => {
-    console.warn('"Firebase Not Done !"')
-  }
+
+  const googleLogin = async () => {
+    try {
+        await GoogleSignin.hasPlayServices();
+        const userInfo = await GoogleSignin.signIn();
+        console.log("userinfo", userInfo);
+
+    } catch (error) {
+        if (error.code === statusCodes.SIGN_IN_CANCELLED) {
+            console.log(error)
+        } else if (error.code === statusCodes.IN_PROGRESS) {
+            console.log(error)
+        } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
+            console.log(error)
+        } else {
+          console.log(error,"in last")
+        }
+    }
+  };
 
   useEffect(() => {
     setIsEmpty(!(username || phone || password))
     AsyncStorage.setItem('isUserOnBoarded', JSON.stringify(true))
+    GoogleSignin.configure({
+      webClientId: '623351954228-0757fjh28jpbf3qc1ofqk4rkv2cs58fg.apps.googleusercontent.com', 
+  })  
   }, [username, phone, password])
+  
+
 
   return (
     <ScrollView style={styles.container}>
@@ -83,7 +106,7 @@ const SignIn = ({ navigation }: ISignInProps) => {
 
         <View style={styles.buttonContainer}>
           <Button
-            onPress={isEmpty ? goToFirebase : validate}
+            onPress={isEmpty ? googleLogin : validate}
             title={isEmpty ? 'Sign in with Google' : 'Submit'}
             color={COLORS.lightPink}
           />
